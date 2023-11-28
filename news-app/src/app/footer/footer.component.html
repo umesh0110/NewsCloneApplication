@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet"> -->
+</head>
+<body>
+    <footer>
+        <h1></h1>
+        <article>
+        </article>
+        <article>
+            <form role="search" [formGroup]="searchForm" (ngSubmit)="search()">
+                <input role="searchbox" type="text" aria-label="Username" label="Search text" name="searchField" #myTextField formControlName="formData" placeholder="Search News ..." required tabindex="0">
+                <button style="color: #757575;" type="submit" tabindex="0">Search →</button>
+            </form>
+            <div></div>
+            <div>
+                <h3 (click)="searchData('world')" (keyup.enter)="searchData('world')" tabindex="0">World</h3>
+                <a (click)="searchData('africa')" (keyup.enter)="searchData('africa')" tabindex="0">Africa</a>
+                <a (click)="searchData('america')" (keyup.enter)="searchData('america')" tabindex="0">America</a>
+                <a (click)="searchData('Asia')" (keyup.enter)="searchData('Asia')" tabindex="0">Asia</a>
+                <a (click)="searchData('Australia')" (keyup.enter)="searchData('Australia')" tabindex="0">Australia</a>
+                <a (click)="searchData('China')" (keyup.enter)="searchData('China')" tabindex="0">China</a>
+                <a (click)="searchData('Europe')" (keyup.enter)="searchData('Europe')" tabindex="0">Europe</a>
+                <a (click)="searchData('India')" (keyup.enter)="searchData('India')" tabindex="0">India</a>
+                <a (click)="searchData('Middle East')" (keyup.enter)="searchData('Middle East')" tabindex="0">Middle East</a>
+                <a (click)="searchData('United Kingdom')" (keyup.enter)="searchData('United Kingdom')" tabindex="0">United Kingdom</a>
+            </div>
+            <div>
+                <h3 (click)="searchData('Business')" (keyup.enter)="searchData('Business')" tabindex="0">Business</h3>
+                <a (click)="searchData('Markets')" (keyup.enter)="searchData('Markets')" tabindex="0">Markets</a>
+                <a (click)="searchData('Tech')" (keyup.enter)="searchData('Tech')" tabindex="0">Tech</a>
+                <a (click)="searchData('Media')" (keyup.enter)="searchData('Media')" tabindex="0">Media</a>
+                <a (click)="searchData('Calculators')" (keyup.enter)="searchData('Calculators')" tabindex="0">Calculators</a>
+                <a (click)="searchData('Videos')" (keyup.enter)="searchData('Videos')" tabindex="0">Videos</a>
+            </div>
+            <div>
+                <h3 (click)="searchData('Health')" (keyup.enter)="searchData('Health')" tabindex="0">Health</h3>
+                <a (click)="searchData('Life')" (keyup.enter)="searchData('Life')" tabindex="0">Life</a>
+                <a (click)="searchData('Fitness')" (keyup.enter)="searchData('Fitness')" tabindex="0">Fitness</a>
+                <a (click)="searchData('Food')" (keyup.enter)="searchData('Food')" tabindex="0">Food</a>
+                <a (click)="searchData('Sleep')" (keyup.enter)="searchData('Sleep')" tabindex="0">Sleep</a>
+                <a (click)="searchData('Mindfulness')" (keyup.enter)="searchData('Mindfulness')" tabindex="0">Mindfulness</a>
+                <a (click)="searchData('Relationships')" (keyup.enter)="searchData('Relationships')" tabindex="0">Relationships</a>
+            </div>
+            <div>
+                <h3 (click)="searchData('Entertainment')" (keyup.enter)="searchData('Entertainment')" tabindex="0">Entertainment</h3>
+                <a (click)="searchData('Movies')" (keyup.enter)="searchData('Movies')" tabindex="0">Movies</a>
+                <a (click)="searchData('Television')" (keyup.enter)="searchData('Television')" tabindex="0">Television</a>
+                <a (click)="searchData('Celebrity')" (keyup.enter)="searchData('Celebrity')" tabindex="0">Celebrity</a>
+            </div>
+            <div>
+              <h3 tabindex="0" (click)="searchData('Style')" (keyup.enter)="searchData('Style')">Style</h3>
+              <a tabindex="0" (click)="searchData('Arts')" (keyup.enter)="searchData('Arts')">Arts</a>
+              <a tabindex="0" (click)="searchData('Design')" (keyup.enter)="searchData('Design')">Design</a>
+              <a tabindex="0" (click)="searchData('Fashion')" (keyup.enter)="searchData('Fashion')">Fashion</a>
+              <a tabindex="0" (click)="searchData('Architecture')" (keyup.enter)="searchData('Architecture')">Architecture</a>
+              <a tabindex="0" (click)="searchData('Luxury')" (keyup.enter)="searchData('Luxury')">Luxury</a>
+              <a tabindex="0" (click)="searchData('Beauty')" (keyup.enter)="searchData('Beauty')">Beauty</a>
+              <a tabindex="0" (click)="searchData('Video')" (keyup.enter)="searchData('Video')">Video</a>
+            </div>
+            <div>
+              <h3 tabindex="0" (click)="searchData('Travel')" (keyup.enter)="searchData('Travel')">Travel</h3>
+              <a tabindex="0" (click)="searchData('Destinations')" (keyup.enter)="searchData('Destinations')">Destinations</a>
+              <a tabindex="0" (click)="searchData('Food')" (keyup.enter)="searchData('Food')">Food & Drink</a>
+              <a tabindex="0" (click)="searchData('Stay')" (keyup.enter)="searchData('Stay')">Stay</a>
+              <a tabindex="0" (click)="searchData('News')" (keyup.enter)="searchData('News')">News</a>
+              <a tabindex="0" (click)="searchData('Videos')" (keyup.enter)="searchData('Videos')">Videos</a>
+            </div>
+            <div>
+              <h3 tabindex="0" (click)="searchData('Sports')" (keyup.enter)="searchData('Sports')">Sports</h3>
+              <a tabindex="0" (click)="searchData('Football')" (keyup.enter)="searchData('Football')">Football</a>
+              <a tabindex="0" (click)="searchData('Tennis')" (keyup.enter)="searchData('Tennis')">Tennis</a>
+              <a tabindex="0" (click)="searchData('Golf')" (keyup.enter)="searchData('Golf')">Golf</a>
+              <a tabindex="0" (click)="searchData('Motorsport')" (keyup.enter)="searchData('Motorsport')">Motorsport</a>
+              <a tabindex="0" (click)="searchData('US Sports')" (keyup.enter)="searchData('US Sports')">US Sports</a>
+              <a tabindex="0" (click)="searchData('Olympics')" (keyup.enter)="searchData('Olympics')">Olympics</a>
+              <a tabindex="0" (click)="searchData('Climbing')" (keyup.enter)="searchData('Climbing')">Climbing</a>
+              <a tabindex="0" (click)="searchData('Esports')" (keyup.enter)="searchData('Esports')">Esports</a>
+              <a tabindex="0" (click)="searchData('Hockey')" (keyup.enter)="searchData('Hockey')">Hockey</a>
+            </div>
+            
+        </article>
+        
+        <article>
+            <div>
+                <img tabindex="0" title="News Icon" alt="News Icon" src="https://upload.wikimedia.org/wikipedia/en/d/d3/BITS_Pilani-Logo.svg">
+                <a role="" tabindex="0" (click)="searchData('India')" (keyup.enter)="searchData('India')">India</a>
+            </div>
+            <div>
+                <!-- <a href="">Audio</a>
+                <a href="">Live TV</a> -->
+                <p>|</p>
+                <p>FOLLOW</p>
+                <i  class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-instagram"></i>
+                <button>Log In</button>
+            </div>
+        </article>
+        <article>
+            <a href="">Terms of Use</a><a href="">Privacy Policy</a><a href="">Cookie Settings</a><a href="">Ad Choices</a><a href="">Accessibility & CC</a><a href="">About</a><a href="">Newsletters</a><a href="">Transcripts</a>
+            
+        </article>
+    </footer>
+</body>
+
+</html>

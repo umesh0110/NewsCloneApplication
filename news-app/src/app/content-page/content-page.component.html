@@ -1,0 +1,66 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>NewsApp - Content</title>
+        <!-- Bootstrap CSS v5.3.0 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+        
+
+    </head>
+
+    <body>
+       
+        <main>
+            <br>
+            <section id="news1">
+                <article class="SArticle" role="article">
+                    <div style="font-size: 3rem;"><b>{{contentDetail.title}}</b></div>
+                    <div>
+                        <img title="{{contentDetail?.title}}" alt="{{contentDetail?.title}}" src="{{contentDetail?.image}}" class="bigImg">
+                    </div>
+                    <br>
+                    <div style="font-size: 1rem;"><b><i>Date: {{contentDetail?.date}}</i></b></div>
+                    <div *ngIf="displayAuthors" style="font-size: 1rem;"><b><i>Author: {{contentDetail?.authors?.[0]?.name}}</i></b></div>
+                    <div *ngIf="contentDetail?.source?.title!=undefined" style="font-size: 1rem;"><b><i>Source: {{contentDetail?.source?.title}}</i></b></div>
+                    <div style="font-size: 1.25rem;">{{contentDetail?.body}}</div>
+                </article>
+
+            </section>
+            
+           
+            
+            <section id="news4">
+                <h1>Similar News</h1>
+               
+            </section>
+            <section id="news5">
+                <article class="SArticle">
+                    <div></div>
+                    <img  title="{{newsDetails[2]?.title}}" alt="{{newsDetails[2]?.title}}" src="{{newsDetails[2]?.image}}" class="smallImg">
+                    <a role="link" (click)="setContentData(newsDetails[2])" (keyup.enter)="setContentData(newsDetails[2])" tabindex="0" style="font-size: 1.2rem;"><b>{{newsDetails[2]?.title}}</b></a>
+                </article>
+                <article class="SArticle">
+                    <div></div>
+                    <img title="{{newsDetails[1]?.title}}" alt="{{newsDetails[1]?.title}}" src="{{newsDetails[1]?.image}}" class="smallImg">
+                    <a (click)="setContentData(newsDetails[1])" (keyup.enter)="setContentData(newsDetails[1])" tabindex="0" style="font-size: 1.2rem;"><b>{{newsDetails[1]?.title}}</b></a>
+                </article>
+                <article class="SArticle">
+                    <div></div>
+                    <img title="{{newsDetails[0]?.title}}" alt="{{newsDetails[0]?.title}}" src="{{newsDetails[0]?.image}}" class="smallImg">
+                    <a (click)="setContentData(newsDetails[0])" (keyup.enter)="setContentData(newsDetails[0])" tabindex="0" style="font-size: 1.2rem;"><b>{{newsDetails[0]?.title}}</b></a>
+                </article>
+                
+            </section>
+            
+            
+        </main>
+       
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <!-- <script src="CNN.js"></script> -->
+    </body>
+
+</html>

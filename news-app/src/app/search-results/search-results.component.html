@@ -1,0 +1,59 @@
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>NewsApp - Search</title>
+        <!-- Bootstrap CSS v5.3.0 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+
+    </head>
+
+    <body>
+       
+        <main>
+            <br>
+            <section id="news2">
+                
+               
+                <article class="SArticle">
+                    <ul style="margin-top: 0;">
+                        <li *ngFor="let news of sportsDetails; let i = index" style="border-top: none; padding-top: 0;">
+                            <img title="{{news?.title}}" alt="{{news?.title}}" src="{{news?.image}}" class="vSmallImg">
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)">{{news?.title}}</a>
+                        </li>
+                      </ul>
+                </article>
+            </section>
+           
+            <section id="news4">
+                <h1>Similar Headlines</h1>            
+            </section>
+            <section id="news5">
+                <article class="SArticle">
+                    <div></div>
+                    <img title="{{newsDetails[0]?.title}}" alt="{{newsDetails[0]?.title}}" src="{{newsDetails[0]?.image}}" class="smallImg">
+                    <a (click)="setContentData(newsDetails[0])" (keyup.enter)="setContentData(newsDetails[0])" tabindex="0" style="font-size: 1.2rem;"><b>{{newsDetails[0]?.title}}</b></a>
+                </article>
+                <article class="SArticle">
+                    <div></div>
+                    <img title="{{newsDetails[1]?.title}}" alt="{{newsDetails[1]?.title}}" src="{{newsDetails[1]?.image}}" class="smallImg">
+                    <a (click)="setContentData(newsDetails[1])" (keyup.enter)="setContentData(newsDetails[1])" tabindex="0" style="font-size: 1.2rem;"><b>{{newsDetails[1]?.title}}</b></a>
+                </article>
+                <article class="SArticle">
+                    <div></div>
+                    <img title="{{newsDetails[2]?.title}}" alt="{{newsDetails[2]?.title}}" src="{{newsDetails[2]?.image}}" class="smallImg">
+                    <a (click)="setContentData(newsDetails[2])" (keyup.enter)="setContentData(newsDetails[2])" tabindex="0" style="font-size: 1.2rem;"><b>{{newsDetails[2]?.title}}</b></a>
+                </article>
+               
+            </section>
+           
+            
+        </main>
+       
+    </body>
+
+</html>

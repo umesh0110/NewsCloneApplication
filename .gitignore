@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/news-app/.vscode
+/NewsApp.MVC/.vs
+/NewsApp.MVC/bin
+/NewsApp.MVC/obj
+/.vs/NewsCloneApplication/config

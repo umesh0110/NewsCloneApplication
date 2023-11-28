@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+       <title>NewsApp - News</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS v5.3.0 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+        
+
+    </head>
+
+    <body>
+       
+        <main>
+            <!-- place main here -->
+            <h2 style="font-family: inherit;
+            font-size: inherit;">
+            <div id="div1">
+
+                  <span (click)="searchData('India')" (keyup.enter)="searchData('India')" tabindex="0">India</span><span>|</span>      
+                  <span (click)="searchData('africa')" (keyup.enter)="searchData('africa')" tabindex="0">Africa</span><span>|</span>
+                  <span (click)="searchData('america')" (keyup.enter)="searchData('america')" tabindex="0">America</span><span>|</span>
+                  <span (click)="searchData('Asia')" (keyup.enter)="searchData('Asia')" tabindex="0">Asia</span><span>|</span>
+                  <span (click)="searchData('Australia')" (keyup.enter)="searchData('Australia')" tabindex="0">Australia</span><span>|</span>
+                  <span (click)="searchData('China')" (keyup.enter)="searchData('China')" tabindex="0">China</span><span>|</span>
+                  <span (click)="searchData('Europe')" (keyup.enter)="searchData('Europe')" tabindex="0">Europe</span><span>|</span>
+                  <span (click)="searchData('Middle East')" (keyup.enter)="searchData('Middle East')" tabindex="0">Middle East</span><span>|</span>
+                  <span (click)="searchData('United Kingdom')" (keyup.enter)="searchData('United Kingdom')" tabindex="0">United Kingdom</span><span>|</span>
+                  <span (click)="searchData('Olympics')" (keyup.enter)="searchData('Olympics')" tabindex="0">Olympics</span><span>|</span>
+                  <span (click)="searchData('Climbing')" (keyup.enter)="searchData('Climbing')" tabindex="0">Climbing</span><span>|</span>
+                  <span (click)="searchData('Esports')" (keyup.enter)="searchData('Esports')" tabindex="0">Esports</span><span>|</span>
+                  <span (click)="searchData('Hockey')" (keyup.enter)="searchData('Hockey')" tabindex="0">Hockey</span>
+
+            </div>
+            </h2>
+            <section id="news1">
+                <article class="SArticle">
+                    <a tabindex="0" (click)="setContentData(newsHeadline[0])" (keyup.enter)="setContentData(newsHeadline[0])"><b>{{newsHeadline[0]?.title}}</b></a>
+                    <div style="position: relative;">
+                        <img tabindex="0" title="{{newsHeadline[0]?.title}}" alt="{{newsHeadline[0]?.title}}" (click)="setContentData(newsHeadline[0])" (keyup.enter)="setContentData(newsHeadline[0])" src="{{newsHeadline[0]?.image}}" class="bigImg">
+                        <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">LIVE UPDATES</b></div>
+                    </div>
+                    <ul>
+                            <li><a tabindex="0" (click)="setContentData(newsHeadline[4])" (keyup.enter)="setContentData(newsHeadline[4])">{{newsHeadline[4]?.title}}</a></li>
+                            <li><a tabindex="0" (click)="setContentData(newsHeadline[5])" (keyup.enter)="setContentData(newsHeadline[5])">{{newsHeadline[5]?.title}}</a></li>
+                            <li><a tabindex="0" (click)="setContentData(newsHeadline[6])" (keyup.enter)="setContentData(newsHeadline[6])">{{newsHeadline[0]?.title}}</a></li>
+
+                    </ul>
+                </article>
+                <article class="SArticle">
+                     <div>
+                        <div style="position: relative;">
+                            <img title="{{recentHeadline[0]?.title}}" alt="{{recentHeadline[0]?.title}}" (click)="setContentData(recentHeadline[0])" (keyup.enter)="setContentData(recentHeadline[0])" src="{{recentHeadline[0]?.image}}" class="smallImg">
+                            <div style="padding: .4rem 1rem; width: 100px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">JUST NOW</b></div>
+                        </div>
+                        <a (click)="setContentData(recentHeadline[0])" (keyup.enter)="setContentData(recentHeadline[0])"><b>{{recentHeadline[0]?.title}}</b></a>
+                        <ul>
+                            <li *ngFor="let news of recentDetails; let i = index">
+                              <div>                    
+                                <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                              </div>
+                            </li>
+                          </ul>
+                    </div> 
+                </article>
+
+                <article class="SArticle">
+                    <img title="{{newsHeadline[1]?.title}}" alt="{{newsHeadline[1]?.title}}" (click)="setContentData(newsHeadline[1])" (keyup.enter)="setContentData(newsHeadline[1])" src="{{newsHeadline[1]?.image}}" class="smallImg">
+                    <a (click)="setContentData(newsHeadline[1])" (keyup.enter)="setContentData(newsHeadline[1])"><b>{{newsHeadline[1]?.title}}</b></a>           
+                    <ul>
+                        <li *ngFor="let news of newsDetails; let i = index">
+                          <ng-container>                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)">{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                    
+                </article>
+            </section>
+            <section id="news2">
+              <div *ngIf="healthDetails!=null">
+                <article class="SArticle">
+                    <img title="{{healthDetails[0]?.title}}" alt="{{healthDetails[0]?.title}}" (click)="setContentData(healthDetails[0])" (keyup.enter)="setContentData(healthDetails[0])" src="{{healthDetails[0]?.image}}" class="smallImg">
+                    <ul>
+                      <li *ngFor="let news of healthDetails; let i = index" >
+                        <ng-container >
+                          <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                        </ng-container>
+                      </li>
+
+                    </ul>
+                    
+                </article>
+              </div>
+                <article class="SArticle">
+                    <img title="{{moviesDetails[0]?.title}}" alt="{{moviesDetails[0]?.title}}"  (click)="setContentData(moviesDetails[0])" (keyup.enter)="setContentData(moviesDetails[0])" src="{{moviesDetails[0]?.image}}" class="bigImg">
+                    <a (click)="setContentData(moviesDetails[0])" (keyup.enter)="setContentData(moviesDetails[0])"><b>{{moviesDetails[0]?.title}}</b></a>
+                    <ul>
+                        <li>
+                            <img title="{{moviesDetails[1]?.title}}" alt="{{moviesDetails[1]?.title}}" (click)="setContentData(moviesDetails[1])" (keyup.enter)="setContentData(moviesDetails[1])" src="{{moviesDetails[1]?.image}}" class="vSmallImg">
+                            <a (click)="setContentData(moviesDetails[1])" (keyup.enter)="setContentData(moviesDetails[1])">{{moviesDetails[1]?.title}}</a>
+                        </li>
+                        <li>
+                            <img title="{{moviesDetails[2]?.title}}" alt="{{moviesDetails[2]?.title}}" (click)="setContentData(moviesDetails[2])" (keyup.enter)="setContentData(moviesDetails[2])" src="{{moviesDetails[2]?.image}}" class="vSmallImg">
+                            <a (click)="setContentData(moviesDetails[2])" (keyup.enter)="setContentData(moviesDetails[2])">{{moviesDetails[2]?.title}}</a>
+                        </li>
+                    </ul>
+                </article>
+                <article class="SArticle">
+                    <ul style="margin-top: 0;">
+                        <li *ngFor="let news of techDetails; let i = index" style="border-top: none; padding-top: 0;">
+                          <ng-container >
+                            <img title="{{news?.title}}" alt="{{news?.title}}" (click)="setContentData(news)" (keyup.enter)="setContentData(news)" src="{{news?.image}}" class="vSmallImg">
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)">{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+
+                </article>
+            </section>
+         
+            <section id="news4">
+                <h1>Featured Sections</h1>
+                
+            </section>
+            <section id="news5">
+                <article class="SArticle">
+                    <div>SPORTS</div>
+                    <img title="{{sportsDetails[0]?.title}}" alt="{{sportsDetails[0]?.title}}" (click)="setContentData(sportsDetails[0])" (keyup.enter)="setContentData(sportsDetails[0])" src="{{sportsDetails[0]?.image}}" class="smallImg">
+                    <!-- <a href="" style="font-size: 1.2rem;"><b>{{sportsDetails[0]?.title}}</b></a> -->
+                    <ul>
+                        <li *ngFor="let news of sportsDetails; let i = index">
+                          <ng-container >                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                </article>
+                <article class="SArticle">
+                    <img title="{{styleDetails[0]?.title}}" alt="{{styleDetails[0]?.title}}" (click)="setContentData(styleDetails[0])" (keyup.enter)="setContentData(styleDetails[0])" src="{{styleDetails[0]?.image}}" class="smallImg">
+                    <!-- <a href="" style="font-size: 1.2rem;"><b>{{styleDetails [0]?.title}}</b></a> -->
+                    <ul>
+                        <li *ngFor="let news of styleDetails ; let i = index">
+                          <ng-container>                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                    
+                </article>
+                <article class="SArticle">
+                    <img title="{{opinionDetails[0]?.title}}" alt="{{opinionDetails[0]?.title}}"  (click)="setContentData(opinionDetails[0])" (keyup.enter)="setContentData(opinionDetails[0])" src="{{opinionDetails[0]?.image}}" class="smallImg">
+                    <ul>
+                        <li *ngFor="let news of opinionDetails ; let i = index">
+                          <ng-container>                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                </article>
+            </section>
+            <section id="news6">
+                <article class="SArticle">
+                    <img title="{{politicsDetails[0]?.title}}" alt="{{politicsDetails[0]?.title}}" (click)="setContentData(politicsDetails[0])" (keyup.enter)="setContentData(politicsDetails[0])" src="{{politicsDetails[0]?.image}}" class="smallImg">
+                    <ul>
+                        <li *ngFor="let news of politicsDetails ; let i = index">
+                          <ng-container>                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                </article>
+                <article class="SArticle">
+                    <img title="{{scienceDetails[0]?.title}}" alt="{{scienceDetails[0]?.title}}" (click)="setContentData(scienceDetails[0])" (keyup.enter)="setContentData(scienceDetails[0])" src="{{scienceDetails[0]?.image}}" class="smallImg">
+                    <ul>
+                        <li *ngFor="let news of scienceDetails ; let i = index">
+                          <ng-container>                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                </article>
+                <article class="SArticle">
+                    <img title="{{techDetails[0]?.title}}" alt="{{techDetails[0]?.title}}" (click)="setContentData(techDetails[0])" (keyup.enter)="setContentData(techDetails[0])" src="{{techDetails[0]?.image}}" class="smallImg">
+                    <ul>
+                        <li *ngFor="let news of techDetails ; let i = index">
+                          <ng-container>                    
+                            <a (click)="setContentData(news)" (keyup.enter)="setContentData(news)" >{{news?.title}}</a>
+                          </ng-container>
+                        </li>
+
+                      </ul>
+                </article>
+            </section>
+            
+        </main>
+       
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <!-- <script src="CNN.js"></script> -->
+    </body>
+
+</html>

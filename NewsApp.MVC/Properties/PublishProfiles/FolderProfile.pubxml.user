@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\MTech\SEM4\Project\NewsApp.MVC\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2023-11-28T07:16:16.7844737Z;True|2023-11-28T12:42:35.8689997+05:30;True|2023-11-26T22:35:22.3886687+05:30;True|2023-11-26T22:34:40.7981296+05:30;True|2023-11-26T22:26:13.4462495+05:30;True|2023-11-26T22:19:11.3980314+05:30;True|2023-11-17T15:52:58.5542528+05:30;True|2023-11-17T15:38:57.8829079+05:30;</History>
+  </PropertyGroup>
+</Project>
